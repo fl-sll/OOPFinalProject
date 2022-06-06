@@ -4,10 +4,11 @@ import java.io.*;
 
 public class Game implements WordsBank{
     private int numberOfGuesses;
+    private int tries;
     private String[] words;
     private String unguessedCharacters;
     private ChosenWord chosenWord;
-    private JFrame frame = new JFrame("Input");
+    private JFrame frame = new JFrame("Revamped Hangman");
 
     @Override
     //// Function to get a random word from "words.txt";
@@ -38,6 +39,7 @@ public class Game implements WordsBank{
         this.unguessedCharacters = "abcdefghijklmnopqrstuvwxyz";
 
         numberOfGuesses = 0;
+        tries = 8;
         this.chosenWord = new ChosenWord(getRandomWord());
 
         inputUserLetterGuess();
@@ -46,6 +48,7 @@ public class Game implements WordsBank{
     //// Function to validate the user's guess
     private void handleUserLetterGuess(char guessedChar) {
         numberOfGuesses++;
+        tries--;
 
         removeOptionalCharGuess(guessedChar);
 
@@ -68,10 +71,16 @@ public class Game implements WordsBank{
         }
 
         //! display a window of the unguessed characters
-        Character guessedLetter = (Character) JOptionPane.showInputDialog(frame, "What letter do you want to guess?", "Letter Guess", JOptionPane.QUESTION_MESSAGE, null, charactersArray, charactersArray[0]);
+        Character guessedLetter = (Character) JOptionPane.showInputDialog(frame, "What letter do you want to guess?",
+                                                                        "Letter Guess", 
+                                                                        JOptionPane.QUESTION_MESSAGE, 
+                                                                        null, 
+                                                                        charactersArray, 
+                                                                        //! sets the first unguessed letter of the alphabet as a placeholder
+                                                                        charactersArray[0]);
 
-        //! if all letters have been guessed, exit the program
-        if (guessedLetter == null) {
+        //! if all letters have been guessed or tries are 0, exit the program
+        if (guessedLetter == null || tries == 0) {
             exit();
             return;
         }
@@ -85,10 +94,12 @@ public class Game implements WordsBank{
     private void displayUserGuessResults(JFrame frame){
         //! shows a character if the character guessed is correct
         JLabel wordStartLabel = new JLabel("After your guess: " + chosenWord.toString());
+        JLabel triesLeft = new JLabel("Tries left: " + (tries + 1));
         JButton button = new JButton();
 
         JPanel panel = new JPanel();
         panel.add(wordStartLabel);
+        panel.add(triesLeft);
         panel.add(button);
 
         //! Sets the window
