@@ -7,7 +7,7 @@
  
  <div> To run the program, download every file and run the Main.java file. </div>
  <div> No need to download anything :) </div>
- 
+ <br>
  <div> To access the project report, download and open ProjectReport.pdf </div>
  <div> Video Demonstration video: Pending... </div>
  <div> Thank you for trying and enjoy the game!!! </div>
