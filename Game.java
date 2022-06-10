@@ -9,6 +9,7 @@ public class Game implements WordsBank{
     private String unguessedCharacters;
     private ChosenWord chosenWord;
     private JFrame frame = new JFrame("Revamped Hangman");
+    private JFrame frame1 = new JFrame("Game Over");
 
     @Override
     //// Function to get a random word from "words.txt";
@@ -72,7 +73,7 @@ public class Game implements WordsBank{
 
         //! display a window of the unguessed characters
         Character guessedLetter = (Character) JOptionPane.showInputDialog(frame, "What letter do you want to guess?",
-                                                                        "Letter Guess", 
+                                                                        "Revamped Hangman", 
                                                                         JOptionPane.QUESTION_MESSAGE, 
                                                                         null, 
                                                                         charactersArray, 
@@ -81,7 +82,7 @@ public class Game implements WordsBank{
 
         //! if all letters have been guessed or tries are 0, exit the program
         if (guessedLetter == null || tries == 0) {
-            exit();
+            GameOver(frame1);
             return;
         }
 
@@ -134,6 +135,20 @@ public class Game implements WordsBank{
             });
             button.setText("Start a new game");
         }
+    }
+
+    private void GameOver(JFrame frame) {
+        JLabel gameOver = new JLabel("Game Over");
+
+        JPanel panel = new JPanel();
+
+        panel.add(gameOver);
+        frame.add(panel);
+        frame.setSize(300, 200);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        exit();
     }
 
     //// Function to close the frame on forced exit
