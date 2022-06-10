@@ -5,8 +5,8 @@
   It is a tougher challenge than the normal one. You only get 9 tries whether you are right or wrong.
  </h3>
  
- <h2> To run the program, download every file and run the Main.java file. </h2>
- <h2> No need to download anything :) </h2>
+ <div> To run the program, download every file and run the Main.java file. </div>
+ <div> No need to download anything :) </div>
  
  <div> To access the project report, download and open ProjectReport.pdf </div>
  <div> Video Demonstration video: Pending... </div>
