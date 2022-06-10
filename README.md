@@ -10,5 +10,5 @@
  <br>
  <br>
  <div> To access the project report, download and open ProjectReport.pdf </div>
- <div style="fontsize:16px;"> Video Demonstration video: Pending... </div>
+ <div style="font-size:16px;"> Video Demonstration video: Pending... </div>
  <div> Thank you for trying and enjoy the game!!! </div>
