@@ -11,6 +11,6 @@
  <br>
  <div> To access the project report, download and open ProjectReport.pdf </div>
  <br>
- <h3> Video Demonstration video: Pending...
+ <h3> Video Demonstration video: Pending... <br>
   Thank you for trying and enjoy the game!!! 
  </h>
