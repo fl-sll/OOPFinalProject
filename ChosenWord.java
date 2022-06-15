@@ -34,6 +34,7 @@ public class ChosenWord {
     @Override
     //// Function to convert char into string
     public String toString() {
+        //! From : https://www.educba.com/mutable-string-in-java/ 
         StringBuilder formattedWord = new StringBuilder();
 
         for (int i = 0; i < word.length(); i++) {
